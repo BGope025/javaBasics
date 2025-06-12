@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Strings" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/pattern" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sorting" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/string" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
