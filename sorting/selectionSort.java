@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class bubbleSort {
+public class selectionSort {
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         System.out.println("Enter the no of elements");
@@ -12,13 +12,15 @@ public class bubbleSort {
             arr[i]= sc.nextInt();
         // sorting data
         for (int i=0;i<l-1;i++) {
-            for (int j=0;j<l-1-i;j++) {
-                if (arr[j]>arr[j+1]) {
-                    int t= arr[j];
-                    arr[j]= arr[j+1];
-                    arr[j+1]= t;
+            int k=i;
+            for (int j=i+1;j<l;j++) {
+                if (arr[k]>arr[j]) {
+                    k=j;
                 }
             }
+            int t= arr[k];
+            arr[k]= arr[i];
+            arr[i]= t;
         }
         // printing data
         System.out.print("The sorted data is...\n| ");
