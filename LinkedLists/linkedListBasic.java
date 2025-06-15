@@ -1,5 +1,5 @@
 // LinkList basic operations
-public class linkListBasic {
+public class linkedListBasic {
     Node head;
     private int size;
 
@@ -14,7 +14,7 @@ public class linkListBasic {
         }
     }
 
-    linkListBasic() {
+    linkedListBasic() {
         this.size = 0;
     }
 
@@ -94,7 +94,7 @@ public class linkListBasic {
     }
 
     public static void main(String[] args) {
-        linkListBasic list= new linkListBasic();
+        linkedListBasic list= new linkedListBasic();
         list.addFirst("a");
         list.printData();
 
