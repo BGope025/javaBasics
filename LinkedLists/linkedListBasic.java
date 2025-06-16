@@ -93,6 +93,39 @@ public class linkedListBasic {
         return size;
     }
 
+    // Reverse (Iterative approach)
+    public void reverseIterate() {
+        if (head == null || head.next == null) { // corner case
+            return;
+        }
+
+        Node prevNode = head;
+        Node currNode = head.next;
+        while (currNode != null) {
+            Node nextNode = currNode.next;
+            currNode.next = prevNode;
+
+            // update
+            prevNode = currNode;
+            currNode = nextNode;
+        }
+        head.next = null;
+        head = prevNode;
+    }
+
+    // Reverse (Recursive approach)
+    public Node reverseRecursion(Node head) {
+        if (head == null || head.next == null) { // base case + corner case
+            return head;
+        }
+
+        Node newHead = reverseRecursion(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
+    }
+
     public static void main(String[] args) {
         linkedListBasic list= new linkedListBasic();
         list.addFirst("a");
@@ -112,5 +145,13 @@ public class linkedListBasic {
         list.printData();
 
         System.out.println("The size is..."+ list.getSize());
+
+        list.addFirst("This");
+        list.addLast("list");
+        list.reverseIterate();
+        list.printData();
+
+        list.head = list.reverseRecursion(list.head);
+        list.printData();
     }
 }

@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 
+// This has the solution of Collections Framework used in LinkedList
 public class collectionsFeameworkLL {
     public static void main(String[] args) {
         LinkedList<String> list = new LinkedList<>();
@@ -16,8 +17,8 @@ public class collectionsFeameworkLL {
         System.out.println(list);
         System.out.println(list.size());
 
-        for (int i=0; i<list.size(); i++) {
-            System.out.print(list.get(i)+"--> ");
+        for (String s : list) {
+            System.out.print(s + "--> ");
         }
         System.out.println("NULL");
 
