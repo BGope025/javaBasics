@@ -11,6 +11,11 @@ public class LL1 {
         list.add(8);
         list.add(2);
         list.add(3);
-
+        int c = 0;
+        for (int s : list) {
+            c++;
+            if (s == 7)
+                System.out.println("the no 7 is found at idx. "+c);
+        }
     }
 }
