@@ -1,8 +1,9 @@
-// Queue using Array
-public class QueueArray {
+// Circular Queue using Array
+public class QueueArrayCircular {
     static class Queue {
         static int[] arr;
         static int size;
+        static int front = -1;
         static int rear = -1;
 
         Queue(int n) {
@@ -12,17 +13,21 @@ public class QueueArray {
 
         // check for empty array
         public static boolean isEmpty() {
-            return rear==-1;
+            return rear==-1 && front==-1;
         }
 
         // enqueue
         public static void add(int data) {
-            if (rear == size-1) { // base case
+            if ((rear+1)%size == front) { // base case
                 System.out.println("No space to add data");
                 return;
             }
+            // adding first element
+            if (front == -1) { // corner case
+                front = 0;
+            }
 
-            rear++;
+            rear = (rear+1) % size;
             arr[rear] = data;
         }
 
@@ -33,12 +38,12 @@ public class QueueArray {
                 return -1;
             }
 
-            int front = arr[0];
-            for (int i=0; i<rear ; i++) {
-                arr[i] = arr[i+1];
-            }
-            rear--;
-            return front;
+            int t = arr[front];
+            if (rear == front)
+                rear = front = -1;
+            else
+                front = (front+1) % size;
+            return t;
         }
 
         // peek
@@ -48,16 +53,22 @@ public class QueueArray {
                 return -1;
             }
 
-            return arr[0];
+            return arr[front];
         }
     }
 
 
     public static void main(String[] args) {
-        new Queue(5);
+        new Queue(4);
         Queue.add(1);
         Queue.add(2);
         Queue.add(3);
+        Queue.add(4);
+
+        System.out.println(Queue.remove());
+        Queue.add(5);
+        System.out.println(Queue.remove());
+        Queue.add(6);
 
         while (!Queue.isEmpty()) {
             System.out.println(Queue.peek());
