@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-// wap to find the diameter of the tree
-public class BT4 {
+// // wap to find the diameter of the tree using approach 2 - O(n)
+public class BT4B {
     static class Node {
         int data;
         Node left;
@@ -28,26 +28,32 @@ public class BT4 {
         }
     }
 
-    // function to find height of a tree
-    public static int treeHeight(Node root) {
-        if (root == null) { // base case
-            return 0;
+    static class TreeInfo {
+        int ht;
+        int dia;
+        TreeInfo(int ht, int dia) {
+            this.ht = ht;
+            this.dia = dia;
         }
-        int leftHeight = treeHeight(root.left);
-        int rightHeight = treeHeight(root.right);
-
-        return Math.max(leftHeight,rightHeight) + 1;
     }
-
-    public static int treeDia(Node root) {
+    public static TreeInfo treeDia(Node root) {
         if (root == null) { // base case
-            return 0;
+            return new TreeInfo(0,0);
         }
-        int dia1 = treeDia(root.left);
-        int dia2 = treeDia(root.right);
-        int dia3 = treeHeight(root.left) + treeHeight(root.right) + 1;
 
-        return Math.max(dia3,Math.max(dia1,dia2));
+        TreeInfo left = treeDia(root.left);
+        TreeInfo right = treeDia(root.right);
+
+        int currHeight = Math.max(left.ht,right.ht) + 1;
+
+        int dia1 = left.dia;
+        int dia2 = right.dia;
+        int dia3 = left.ht + right.ht + 1;
+
+        int currDia = Math.max(Math.max(dia1,dia2),dia3);
+
+        TreeInfo info = new TreeInfo(currHeight, currDia);
+        return info;
     }
 
     public static void main(String[] args) {
@@ -65,11 +71,11 @@ public class BT4 {
         Node root;
         if (choice == 1) {
             root = tree.buildTree(nodes);
-            System.out.println("The diameter of the tree 1 is..." + treeDia(root));
+            System.out.println("The diameter of the tree 1 is..." + treeDia(root).dia);
         }
         else if (choice == 2) {
             root = tree.buildTree(nodes2);
-            System.out.println("The diameter of the tree 2 is..." + treeDia(root));
+            System.out.println("The diameter of the tree 2 is..." + treeDia(root).dia);
         }
         else
             System.out.println("Wrong Choice");
