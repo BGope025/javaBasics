@@ -1,5 +1,5 @@
-// wap to find the sum of all the nodes
-public class BT2 {
+// wap to find the height of a tree
+public class BT3 {
     static class Node {
         int data;
         Node left;
@@ -26,14 +26,14 @@ public class BT2 {
         }
     }
 
-    public static int addNodes(Node root) {
+    public static int treeHeight(Node root) {
         if (root == null) { // base case
             return 0;
         }
-        int leftNodes = addNodes(root.left);
-        int rightNodes = addNodes(root.right);
+        int leftHeight = treeHeight(root.left);
+        int rightHeight = treeHeight(root.right);
 
-        return leftNodes + rightNodes + root.data;
+        return Math.max(leftHeight,rightHeight) + 1;
     }
 
     public static void main(String[] args) {
@@ -42,6 +42,6 @@ public class BT2 {
 
         Node root = tree.buildTree(nodes);
 
-        System.out.println("The sum of nodes is..."+addNodes(root));
+        System.out.println("The height of the tree is..."+treeHeight(root));
     }
 }
