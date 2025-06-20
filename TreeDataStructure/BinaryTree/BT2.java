@@ -1,5 +1,5 @@
-// wap to count total no of nodes
-public class BT1 {
+// wap to find the sum of all the nodes
+public class BT2 {
     static class Node {
         int data;
         Node left;
@@ -26,14 +26,14 @@ public class BT1 {
         }
     }
 
-    public static int countNodes(Node root) {
+    public static int addNodes(Node root) {
         if (root == null) { // base case
             return 0;
         }
-        int leftNodes = countNodes(root.left);
-        int rightNodes = countNodes(root.right);
+        int leftNodes = addNodes(root.left);
+        int rightNodes = addNodes(root.right);
 
-        return leftNodes + rightNodes + 1;
+        return leftNodes + rightNodes + root.data;
     }
 
     public static void main(String[] args) {
@@ -42,6 +42,6 @@ public class BT1 {
 
         Node root = tree.buildTree(nodes);
 
-        System.out.println("The total no of nodes is..."+countNodes(root));
+        System.out.println("The total no of nodes is..."+addNodes(root));
     }
 }
