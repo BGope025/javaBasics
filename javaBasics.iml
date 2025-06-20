@@ -4,14 +4,14 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Strings" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/pattern" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/sorting" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/string" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/LinkedLists" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/stackDataStructure" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/QueueDataStructure" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TreeDataStructure" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pattern" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sorting" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/StackDataStructure" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TreeDataStructure/BinaryTree" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
