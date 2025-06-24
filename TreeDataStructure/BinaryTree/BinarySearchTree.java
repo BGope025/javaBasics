@@ -117,7 +117,7 @@ public class BinarySearchTree {
             System.out.println("not found");
 
         // deleting data
-        System.out.println(delete(root, 2));
+        delete(root, 1);
 
         // output of the tree
         inOrder(root);
