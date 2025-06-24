@@ -53,13 +53,57 @@ public class BinarySearchTree {
         inOrder(root.right); // print right subtree
     }
 
+    public static Node delete(Node root, int val) {
+        if (!search(root, val)) {
+            System.out.println("The element to delete is not on the data");
+            return null;
+        }
+        if (root.data > val) {
+            root.left = delete(root.left, val);
+        }
+        else if (root.data < val) {
+            root.right = delete(root.right, val);
+        }
+        else { // root.data == val
+            // case 1
+            if (root.left == null && root.right == null) {
+                return null;
+            }
+
+            // case 2
+            if (root.left == null) {
+                return root.right;
+            }
+            else if (root.right == null) {
+                return root.left;
+            }
+
+            // case 3
+            Node IS = inOrderSuccessor(root.right);
+            root.data = IS.data;
+            root.right = delete(root.right, IS.data);
+        }
+
+        return root;
+    }
+
+    // to find and return the inorder successor
+    public static Node inOrderSuccessor(Node root) {
+        // running loop until we reach the leftmost element
+        while (root.left != null) {
+            root = root.left;
+        }
+        // returning the leftmost element
+        return root;
+    }
+
     public static void main(String[] args) {
-        int value[] = {5, 1, 3, 4, 2, 7};
+        int[] value = {5, 1, 3, 4, 2, 7};
         Node root = null;
 
         // input into the tree
-        for (int i=0; i<value.length; i++) {
-            root = insert(root, value[i]);
+        for (int j : value) {
+            root = insert(root, j);
         }
 
         // output of the tree
@@ -71,5 +115,12 @@ public class BinarySearchTree {
             System.out.println("found");
         else
             System.out.println("not found");
+
+        // deleting data
+        System.out.println(delete(root, 2));
+
+        // output of the tree
+        inOrder(root);
+        System.out.println();
     }
 }
