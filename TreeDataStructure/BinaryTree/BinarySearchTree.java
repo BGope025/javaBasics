@@ -97,6 +97,23 @@ public class BinarySearchTree {
         return root;
     }
 
+    public static void printInRange(Node root, int X, int Y) {
+        if (root == null) {
+            return;
+        }
+        if (root.data >= X && root.data <= Y) {
+            printInRange(root.left, X, Y);
+            System.out.print(root.data+" ");
+            printInRange(root.right, X, Y);
+        }
+        else if (root.data >= Y) {
+            printInRange(root.left, X, Y);
+        }
+        else { // root.data <= X
+            printInRange(root.right, X, Y);
+        }
+    }
+
     public static void main(String[] args) {
         int[] value = {5, 1, 3, 4, 2, 7};
         Node root = null;
@@ -121,6 +138,10 @@ public class BinarySearchTree {
 
         // output of the tree
         inOrder(root);
+        System.out.println();
+
+        // printing data in a range
+        printInRange(root, 3, 5);
         System.out.println();
     }
 }
