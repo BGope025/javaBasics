@@ -97,18 +97,23 @@ public class BinarySearchTree {
         return root;
     }
 
+    // to print data in the range
     public static void printInRange(Node root, int X, int Y) {
-        if (root == null) {
+        if (root == null) { // base case
             return;
         }
+
+        // case 1
         if (root.data >= X && root.data <= Y) {
             printInRange(root.left, X, Y);
             System.out.print(root.data+" ");
             printInRange(root.right, X, Y);
         }
+        // case 2
         else if (root.data >= Y) {
             printInRange(root.left, X, Y);
         }
+        // case 3
         else { // root.data <= X
             printInRange(root.right, X, Y);
         }
