@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class BinarySearchTree {
     static class Node {
         int data;
@@ -119,6 +121,32 @@ public class BinarySearchTree {
         }
     }
 
+    // to print the path stored in ArrayList
+    public static void printPath(ArrayList<Integer> path) {
+        for (int i=0; i<path.size(); i++) {
+            System.out.print(path.get(i)+"-->");
+        }
+        System.out.println("null");
+    }
+
+    // to find and store one path at a time in ArrayList
+    public static void findPaths(Node root, ArrayList<Integer> path) {
+        if (root == null) { // base case
+            return;
+        }
+        path.add(root.data);
+        // leaf node
+        if (root.left == null && root.right == null) {
+            printPath(path);
+        }
+        // non-leaf node
+        else {
+            findPaths(root.left, path);
+            findPaths(root.right, path);
+        }
+        path.remove(path.size()-1);
+    }
+
     public static void main(String[] args) {
         int[] value = {5, 1, 3, 4, 2, 7};
         Node root = null;
@@ -148,5 +176,8 @@ public class BinarySearchTree {
         // printing data in a range
         printInRange(root, 3, 5);
         System.out.println();
+
+        // printing all the paths
+        findPaths(root, new ArrayList<>());
     }
 }
