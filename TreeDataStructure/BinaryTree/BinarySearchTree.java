@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+// Binary Search Tree
 public class BinarySearchTree {
     static class Node {
         int data;
@@ -123,8 +124,8 @@ public class BinarySearchTree {
 
     // to print the path stored in ArrayList
     public static void printPath(ArrayList<Integer> path) {
-        for (int i=0; i<path.size(); i++) {
-            System.out.print(path.get(i)+"-->");
+        for (Integer integer : path) {
+            System.out.print(integer + "-->");
         }
         System.out.println("null");
     }

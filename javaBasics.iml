@@ -12,6 +12,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Sorting" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/StackDataStructure" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TreeDataStructure/BinaryTree" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/HashDataStructure" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
