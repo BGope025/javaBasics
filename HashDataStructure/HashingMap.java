@@ -12,5 +12,8 @@ public class HashingMap {
         map.put("India", 150);
         System.out.println(map);
 
+        // updating key-value pair
+        map.put("China", 190);
+        System.out.println(map);
     }
 }
