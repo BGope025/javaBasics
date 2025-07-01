@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 
 // notes for hashset
-public class Hashing {
+public class HashingSet {
     public static void main(String[] args) {
         // creating HashSet
         HashSet<Integer> set = new HashSet<>();

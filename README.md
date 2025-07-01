@@ -16,6 +16,7 @@
   - Binary search tree
 - Hash data structure
   - HashSet
+  - HashMap
 
 This repository contains those questions which I did to practice my basics of java.
 
