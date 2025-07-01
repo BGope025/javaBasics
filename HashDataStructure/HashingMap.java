@@ -15,5 +15,11 @@ public class HashingMap {
         // updating key-value pair
         map.put("China", 190);
         System.out.println(map);
+
+        // searching key
+        if (map.containsKey("China"))
+            System.out.println("key exists");
+        else
+            System.out.println("key doesn't exists");
     }
 }
