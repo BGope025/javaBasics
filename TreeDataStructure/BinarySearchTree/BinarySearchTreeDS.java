@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 // Binary Search Tree
-public class BinarySearchTree {
+public class BinarySearchTreeDS {
     static class Node {
         int data;
         Node left;
