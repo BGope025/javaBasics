@@ -60,12 +60,15 @@ public class TrieDS {
     }
     public static void main(String[] args) {
         String[] word = {"the", "a", "there", "their", "any"};
+
+        // insert function call
         for (String k: word) {
             insert(k);
         }
 
+        // search function called
         System.out.println(search("there"));
         System.out.println(search("thor"));
-        System.out.println(search("an"));
+        System.out.println(search("any"));
     }
 }
